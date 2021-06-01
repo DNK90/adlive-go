@@ -1,0 +1,109 @@
+syntax = "proto3";
+package pb;
+
+import "types.proto";
+option go_package = ".;pb";
+
+message CommonResponse {
+    int32 code = 1;
+    string message = 2;
+    int32 id = 3;
+}
+// user
+message LoginResponse {
+    string access_token = 1;
+    string refresh_token = 2;
+    int64 expired_in = 4;
+    string message = 3;
+}
+message GetUserProfileResponse {
+    UserProfile data = 1;
+    int32 code = 2;
+    string message = 3;
+}
+// Location service
+message AddLocationResponse {
+    int32 location_id = 1;
+    string message = 2;
+    int32 code = 3;
+}
+
+message Location {
+    int32 location_id = 1;
+    string name = 2;
+    string address = 3;
+    int32 status = 4;
+    repeated Area areas = 5;
+}
+
+message ListLocationResponse {
+    repeated Location data = 1;
+    int32 code = 2;
+    string message = 3;
+}
+
+// Area service
+message AddAreaResponse {
+    int32 area_id = 1;
+    int32 code = 2;
+    string message = 3;
+}
+
+message ListAreaResponse {
+    repeated Area data = 1;
+    int32 code = 2;
+    string message = 3;
+}
+
+// screen
+message ListScreenResponse {
+    repeated ScreenInfo data = 1;
+    int32 code = 2;
+    string message = 3;
+}
+
+message AddScreenResponse {
+    ScreenInfo data = 1;
+    int32 code = 2;
+    string message = 3;
+}
+
+// activities
+message ListActivitiesResponse {
+    ScreenActivities activities = 1;
+    int32 code = 2;
+    string message = 3;
+}
+
+// video
+
+message UploadVideoResponse {
+    int32 video_id = 1;
+    int32 code = 2;
+    string message = 3;
+}
+
+message ListVideoResponse {
+    Videos data = 1;
+    int32 code = 2;
+    string message = 3;
+}
+
+message GetVideoResponse {
+    Video data = 1;
+    int32 code = 2;
+    string message = 3;
+}
+
+// campaign
+message ListCampaignResponse {
+    repeated Campaign data = 1;
+    int32 code = 2;
+    string message = 3;
+}
+
+message CampaignResponse {
+    Campaign data = 1;
+    int32 code = 2;
+    string message = 3;
+}

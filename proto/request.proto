@@ -1,0 +1,87 @@
+syntax = "proto3";
+package pb;
+
+import "types.proto";
+option go_package = ".;pb";
+
+message CommonPagingMessage {}
+
+// user
+message LoginRequest {
+    string username = 1;
+    string password = 2;
+    string refresh_token = 3;
+    string mac = 4;
+}
+
+// Location Service
+message AddLocationRequest {
+    string name = 1;
+    string address = 2;
+    repeated Area areas = 3;
+    int32 location_id = 4;
+    Status status = 5;
+}
+
+message ListLocationRequest {
+    string name = 1;
+    string address = 2;
+}
+
+message RemoveLocationRequest {
+    int32 location_id = 1;
+}
+
+// Area service
+message AddAreaRequest {
+    int32 location_id = 1;
+    string name = 2;
+}
+
+message ListAreaRequest {
+    int32 location_id = 1;
+}
+
+message RemoveAreaRequest {
+    int32 location_id = 1;
+    int32 area_id = 2;
+}
+
+// screen
+message AddScreenRequest {
+    string mac_address = 1;
+    string type_of_device = 2;
+    string os = 3;
+    string app_version = 4;
+}
+
+message ListScreenRequest {
+    int32 location_id = 1;
+    int32 area_id = 2;
+}
+
+message UpdateScreenRequest {
+    ScreenInfo data = 1;
+}
+
+// activities
+message ListActivitiesRequest {
+    int32 screen_id = 1;
+}
+
+// issue
+message ReportIssueRequest {
+    int32 screen_id = 1;
+    int32 issue_type = 2;
+    string description = 3;
+}
+
+// video
+message GetVideoRequest {
+    int32 video_id = 1;
+}
+
+// campaign
+message CampaignRequest {
+    int32 campaign_id = 1;
+}

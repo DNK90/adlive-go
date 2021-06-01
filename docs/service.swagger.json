@@ -1,0 +1,1189 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "service.proto",
+    "version": "version not set"
+  },
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/activities": {
+      "post": {
+        "summary": "service: activities",
+        "operationId": "Adlive_ListActivities",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/pbListActivitiesResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "tags": [
+          "Adlive"
+        ]
+      }
+    },
+    "/area": {
+      "post": {
+        "summary": "service: area",
+        "operationId": "Adlive_ListArea",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/pbListAreaResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "tags": [
+          "Adlive"
+        ]
+      }
+    },
+    "/area/remove": {
+      "post": {
+        "operationId": "Adlive_RemoveArea",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/pbCommonResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "tags": [
+          "Adlive"
+        ]
+      }
+    },
+    "/campaigns": {
+      "post": {
+        "summary": "service: Campaign",
+        "operationId": "Adlive_ListCampaign",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/pbListCampaignResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "tags": [
+          "Adlive"
+        ]
+      }
+    },
+    "/campaigns/edit": {
+      "post": {
+        "operationId": "Adlive_EditCampaign",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/pbCommonResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "tags": [
+          "Adlive"
+        ]
+      }
+    },
+    "/campaigns/get": {
+      "post": {
+        "operationId": "Adlive_GetCampaign",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/pbCampaignResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "tags": [
+          "Adlive"
+        ]
+      }
+    },
+    "/health": {
+      "get": {
+        "operationId": "Adlive_Liveness",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/pbLivenessResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "tags": [
+          "Adlive"
+        ]
+      }
+    },
+    "/location": {
+      "post": {
+        "operationId": "Adlive_Locations",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/pbListLocationResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "tags": [
+          "Adlive"
+        ]
+      }
+    },
+    "/location/add": {
+      "post": {
+        "summary": "service: location",
+        "operationId": "Adlive_AddLocation",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/pbAddLocationResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "tags": [
+          "Adlive"
+        ]
+      }
+    },
+    "/location/remove": {
+      "post": {
+        "operationId": "Adlive_RemoveLocation",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/pbCommonResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "tags": [
+          "Adlive"
+        ]
+      }
+    },
+    "/login": {
+      "post": {
+        "summary": "service: user",
+        "operationId": "Adlive_Login",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/pbLoginResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "tags": [
+          "Adlive"
+        ]
+      }
+    },
+    "/profile": {
+      "get": {
+        "operationId": "Adlive_GetUserProfile",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/pbGetUserProfileResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "tags": [
+          "Adlive"
+        ]
+      },
+      "put": {
+        "operationId": "Adlive_UpdateUserProfile",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/pbCommonResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "tags": [
+          "Adlive"
+        ]
+      }
+    },
+    "/ready": {
+      "get": {
+        "operationId": "Adlive_Readiness",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/pbReadinessResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "tags": [
+          "Adlive"
+        ]
+      },
+      "post": {
+        "operationId": "Adlive_ToggleReadiness",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/pbToggleReadinessResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "tags": [
+          "Adlive"
+        ]
+      }
+    },
+    "/screen": {
+      "post": {
+        "operationId": "Adlive_ListScreen",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/pbListScreenResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "tags": [
+          "Adlive"
+        ]
+      }
+    },
+    "/screen/add": {
+      "get": {
+        "summary": "service: manageScreen",
+        "operationId": "Adlive_AddScreen",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/pbAddScreenResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "mac_address",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "type_of_device",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "os",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "app_version",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "Adlive"
+        ]
+      }
+    },
+    "/screen/issue": {
+      "post": {
+        "summary": "service: Issue",
+        "operationId": "Adlive_AddIssue",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/pbCommonResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "tags": [
+          "Adlive"
+        ]
+      }
+    },
+    "/screen/update": {
+      "post": {
+        "operationId": "Adlive_UpdateScreen",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/pbCommonResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "tags": [
+          "Adlive"
+        ]
+      }
+    },
+    "/version": {
+      "get": {
+        "operationId": "Adlive_Version",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/pbVersionResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "tags": [
+          "Adlive"
+        ]
+      }
+    },
+    "/videos": {
+      "post": {
+        "summary": "service: manageVideo",
+        "operationId": "Adlive_ListVideo",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/pbListVideoResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "tags": [
+          "Adlive"
+        ]
+      }
+    },
+    "/videos/get": {
+      "post": {
+        "operationId": "Adlive_GetVideo",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/pbGetVideoResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "tags": [
+          "Adlive"
+        ]
+      }
+    },
+    "/videos/upload": {
+      "post": {
+        "operationId": "Adlive_UploadVideo",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/pbUploadVideoResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "tags": [
+          "Adlive"
+        ]
+      }
+    }
+  },
+  "definitions": {
+    "pbAdSet": {
+      "type": "object",
+      "properties": {
+        "total_video": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "played": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "data": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/pbAdSetVideo"
+          }
+        }
+      }
+    },
+    "pbAdSetBasic": {
+      "type": "object",
+      "properties": {
+        "total_video": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "played": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "videos": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "pbAdSetVideo": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "file_name": {
+          "type": "string"
+        },
+        "picture": {
+          "type": "string"
+        }
+      }
+    },
+    "pbAddLocationResponse": {
+      "type": "object",
+      "properties": {
+        "location_id": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        }
+      },
+      "title": "Location service"
+    },
+    "pbAddScreenResponse": {
+      "type": "object",
+      "properties": {
+        "data": {
+          "$ref": "#/definitions/pbScreenInfo"
+        },
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        }
+      }
+    },
+    "pbArea": {
+      "type": "object",
+      "properties": {
+        "area_id": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "name": {
+          "type": "string"
+        },
+        "location_id": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "status": {
+          "$ref": "#/definitions/pbStatus"
+        }
+      }
+    },
+    "pbAvailability": {
+      "type": "string",
+      "enum": [
+        "offline",
+        "online"
+      ],
+      "default": "offline"
+    },
+    "pbCampaign": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "name": {
+          "type": "string"
+        },
+        "from_date": {
+          "type": "string",
+          "format": "int64"
+        },
+        "to_date": {
+          "type": "string",
+          "format": "int64"
+        },
+        "status": {
+          "$ref": "#/definitions/pbCampaignStatus"
+        },
+        "ad_set": {
+          "$ref": "#/definitions/pbAdSetBasic"
+        },
+        "total_location": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "total_screen": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "pbCampaignResponse": {
+      "type": "object",
+      "properties": {
+        "data": {
+          "$ref": "#/definitions/pbCampaign"
+        },
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        }
+      }
+    },
+    "pbCampaignRule": {
+      "type": "object",
+      "properties": {
+        "locations": {
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "areas": {
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "time_rule": {
+          "$ref": "#/definitions/pbCampaignTimeRule"
+        }
+      }
+    },
+    "pbCampaignStatus": {
+      "type": "string",
+      "enum": [
+        "empty",
+        "cancel",
+        "draft",
+        "live",
+        "pause"
+      ],
+      "default": "empty"
+    },
+    "pbCampaignTimeRule": {
+      "type": "string",
+      "enum": [
+        "free_in_this_time"
+      ],
+      "default": "free_in_this_time"
+    },
+    "pbCommonResponse": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "id": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "pbGetUserProfileResponse": {
+      "type": "object",
+      "properties": {
+        "data": {
+          "$ref": "#/definitions/pbUserProfile"
+        },
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        }
+      }
+    },
+    "pbGetVideoResponse": {
+      "type": "object",
+      "properties": {
+        "data": {
+          "$ref": "#/definitions/pbVideo"
+        },
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        }
+      }
+    },
+    "pbListActivitiesResponse": {
+      "type": "object",
+      "properties": {
+        "activities": {
+          "$ref": "#/definitions/pbScreenActivities"
+        },
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        }
+      },
+      "title": "activities"
+    },
+    "pbListAreaResponse": {
+      "type": "object",
+      "properties": {
+        "data": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/pbArea"
+          }
+        },
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        }
+      }
+    },
+    "pbListCampaignResponse": {
+      "type": "object",
+      "properties": {
+        "data": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/pbCampaign"
+          }
+        },
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        }
+      },
+      "title": "campaign"
+    },
+    "pbListLocationResponse": {
+      "type": "object",
+      "properties": {
+        "data": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/pbLocation"
+          }
+        },
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        }
+      }
+    },
+    "pbListScreenResponse": {
+      "type": "object",
+      "properties": {
+        "data": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/pbScreenInfo"
+          }
+        },
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        }
+      },
+      "title": "screen"
+    },
+    "pbListVideoResponse": {
+      "type": "object",
+      "properties": {
+        "data": {
+          "$ref": "#/definitions/pbVideos"
+        },
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        }
+      }
+    },
+    "pbLivenessResponse": {
+      "type": "object",
+      "properties": {
+        "message": {
+          "type": "string"
+        }
+      }
+    },
+    "pbLocation": {
+      "type": "object",
+      "properties": {
+        "location_id": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "name": {
+          "type": "string"
+        },
+        "address": {
+          "type": "string"
+        },
+        "status": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "areas": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/pbArea"
+          }
+        }
+      }
+    },
+    "pbLoginResponse": {
+      "type": "object",
+      "properties": {
+        "access_token": {
+          "type": "string"
+        },
+        "refresh_token": {
+          "type": "string"
+        },
+        "expired_in": {
+          "type": "string",
+          "format": "int64"
+        },
+        "message": {
+          "type": "string"
+        }
+      },
+      "title": "user"
+    },
+    "pbReadinessResponse": {
+      "type": "object",
+      "properties": {
+        "message": {
+          "type": "string"
+        }
+      }
+    },
+    "pbScreenActivities": {
+      "type": "object",
+      "properties": {
+        "data": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/pbScreenActivity"
+          }
+        }
+      }
+    },
+    "pbScreenActivity": {
+      "type": "object",
+      "properties": {
+        "time": {
+          "type": "string",
+          "format": "int64"
+        },
+        "activity": {
+          "type": "string"
+        }
+      }
+    },
+    "pbScreenInfo": {
+      "type": "object",
+      "properties": {
+        "screen_id": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "screen_name": {
+          "type": "string"
+        },
+        "location_id": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "location_name": {
+          "type": "string"
+        },
+        "location_address": {
+          "type": "string"
+        },
+        "area_id": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "area_name": {
+          "type": "string"
+        },
+        "status": {
+          "$ref": "#/definitions/pbStatus"
+        },
+        "availability": {
+          "$ref": "#/definitions/pbAvailability"
+        },
+        "type_of_device": {
+          "type": "string"
+        },
+        "mac_address": {
+          "type": "string"
+        },
+        "os": {
+          "type": "string"
+        },
+        "app_version": {
+          "type": "string"
+        },
+        "ip_address": {
+          "type": "string"
+        }
+      }
+    },
+    "pbStatus": {
+      "type": "string",
+      "enum": [
+        "activated",
+        "deactivated"
+      ],
+      "default": "activated"
+    },
+    "pbToggleReadinessResponse": {
+      "type": "object",
+      "properties": {
+        "message": {
+          "type": "string"
+        }
+      }
+    },
+    "pbUploadVideoResponse": {
+      "type": "object",
+      "properties": {
+        "video_id": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        }
+      }
+    },
+    "pbUserProfile": {
+      "type": "object",
+      "properties": {
+        "user_id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        },
+        "phone": {
+          "type": "string"
+        },
+        "company": {
+          "type": "string"
+        },
+        "role": {
+          "type": "string"
+        },
+        "status": {
+          "$ref": "#/definitions/pbStatus"
+        },
+        "created_at": {
+          "type": "string",
+          "format": "int64"
+        }
+      }
+    },
+    "pbVersionResponse": {
+      "type": "object",
+      "properties": {
+        "version": {
+          "type": "string"
+        }
+      }
+    },
+    "pbVideo": {
+      "type": "object",
+      "properties": {
+        "video_id": {
+          "type": "string"
+        },
+        "content": {
+          "type": "string",
+          "format": "byte"
+        },
+        "file_name": {
+          "type": "string"
+        },
+        "format": {
+          "type": "string"
+        },
+        "url": {
+          "type": "string"
+        },
+        "updated_at": {
+          "type": "string",
+          "format": "int64"
+        },
+        "title": {
+          "type": "string"
+        },
+        "tag": {
+          "type": "string"
+        },
+        "picture": {
+          "type": "string"
+        },
+        "status": {
+          "$ref": "#/definitions/pbStatus"
+        }
+      }
+    },
+    "pbVideos": {
+      "type": "object",
+      "properties": {
+        "data": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/pbVideo"
+          }
+        }
+      }
+    },
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "type_url": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string",
+          "format": "byte"
+        }
+      }
+    },
+    "runtimeError": {
+      "type": "object",
+      "properties": {
+        "error": {
+          "type": "string"
+        },
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    }
+  }
+}

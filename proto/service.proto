@@ -1,0 +1,82 @@
+syntax = "proto3";
+package pb;
+
+
+import "google/api/annotations.proto";
+import "github.com/gogo/protobuf/gogoproto/gogo.proto";
+import "request.proto";
+import "response.proto";
+import "types.proto";
+
+option (gogoproto.unmarshaler_all) = true;
+option (gogoproto.sizer_all) = true;
+option (gogoproto.equal_all) = true;
+option (gogoproto.marshaler_all) = true;
+
+service Adlive {
+    rpc Version(VersionRequest) returns (VersionResponse) {option (google.api.http) = {get: "/version"};}
+    rpc Liveness(LivenessRequest) returns (LivenessResponse) {option (google.api.http) = {get: "/health"};}
+    rpc ToggleReadiness(ToggleReadinessRequest) returns (ToggleReadinessResponse) {option (google.api.http) = {post: "/ready"};}
+    rpc Readiness(ReadinessRequest) returns (ReadinessResponse) {option (google.api.http) = {get: "/ready"};}
+
+    // service: user
+    rpc Login(LoginRequest) returns (LoginResponse) {option (google.api.http) = {post: "/login"};}
+    rpc GetUserProfile(EmptyMessage) returns (GetUserProfileResponse) {option (google.api.http) = {get: "/profile"};}
+    rpc UpdateUserProfile(UserProfile) returns (CommonResponse) {option (google.api.http) = {put: "/profile"};}
+
+    // service: location
+    rpc AddLocation(AddLocationRequest) returns (AddLocationResponse) {option (google.api.http) = {post: "/location/add"};}
+    rpc Locations(CommonPagingMessage) returns (ListLocationResponse) {option (google.api.http) = {post: "/location"};}
+    rpc RemoveLocation(RemoveLocationRequest) returns (CommonResponse) {option (google.api.http) = {post: "/location/remove"};}
+
+    // service: area
+    rpc ListArea(ListAreaRequest) returns (ListAreaResponse) {option (google.api.http) = {post: "/area"};}
+    rpc RemoveArea(RemoveAreaRequest) returns (CommonResponse) {option (google.api.http) = {post: "/area/remove"};}
+
+    // service: manageScreen
+    rpc AddScreen(AddScreenRequest) returns (AddScreenResponse) {option (google.api.http) = {get: "/screen/add"};}
+    rpc UpdateScreen(UpdateScreenRequest) returns (CommonResponse) {option (google.api.http) = {post: "/screen/update"};}
+    rpc ListScreen(ListScreenRequest) returns (ListScreenResponse) {option (google.api.http) = {post: "/screen"};}
+
+    // service: activities
+    rpc ListActivities(ListActivitiesRequest) returns (ListActivitiesResponse) {option (google.api.http) = {post: "/activities"};}
+
+    // service: Issue
+    rpc AddIssue(ReportIssueRequest) returns (CommonResponse) {option (google.api.http) = {post: "/screen/issue"};}
+
+    // service: manageVideo
+    rpc ListVideo(CommonPagingMessage) returns (ListVideoResponse) {option (google.api.http) = {post: "/videos"};}
+    rpc GetVideo(GetVideoRequest) returns (GetVideoResponse) {option (google.api.http) = {post: "/videos/get"};}
+    rpc UploadVideo(Video) returns (UploadVideoResponse) {option (google.api.http) = {post: "/videos/upload"};}
+
+    // service: Campaign
+    rpc ListCampaign(CommonPagingMessage) returns (ListCampaignResponse) {option (google.api.http) = {post: "/campaigns"};}
+    rpc GetCampaign(CampaignRequest) returns (CampaignResponse) {option (google.api.http) = {post: "/campaigns/get"};}
+    rpc EditCampaign(CampaignDetail) returns (CommonResponse) {option (google.api.http) = {post: "/campaigns/edit"};}
+}
+
+message VersionRequest {
+}
+
+message VersionResponse {
+    string version = 1;
+}
+
+message LivenessRequest {}
+
+message LivenessResponse {
+    string message = 1 [json_name="message"];
+}
+
+message ToggleReadinessRequest {}
+
+message ToggleReadinessResponse {
+    string message = 1 [json_name="message"];
+}
+
+message ReadinessRequest {}
+
+message ReadinessResponse {
+    string message = 1 [json_name="message"];
+}
+

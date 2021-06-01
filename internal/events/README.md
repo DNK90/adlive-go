@@ -1,0 +1,1 @@
+### This package is used to handle events such as logs activities sent from screens.

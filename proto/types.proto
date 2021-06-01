@@ -1,0 +1,134 @@
+syntax = "proto3";
+package pb;
+
+option go_package = ".;pb";
+
+enum Status {
+    activated = 0;
+    deactivated = 1;
+}
+
+enum Availability {
+    offline = 0;
+    online = 1;
+}
+
+enum CampaignStatus {
+    empty = 0;
+    cancel = 1;
+    draft = 2;
+    live = 3;
+    pause = 4;
+}
+
+enum CampaignTimeRule {
+    free_in_this_time = 0;
+}
+
+message EmptyMessage {}
+
+message UserProfile {
+    string user_id = 1;
+    string name = 2;
+    string email = 3;
+    string phone = 4;
+    string company = 5;
+    string role = 6;
+    Status status = 7;
+    int64 created_at = 8;
+}
+
+message Area {
+    int32 area_id = 1;
+    string name = 2;
+    int32 location_id = 3;
+    Status status = 4;
+}
+
+message ScreenActivity {
+    int64 time = 1;
+    string activity = 2;
+}
+
+message ScreenActivities {
+    repeated ScreenActivity data = 1; // TODO: add offset for paging
+}
+
+message ScreenInfo {
+    int32 screen_id = 1;
+    string screen_name = 2;
+    int32 location_id = 3;
+    string location_name = 4;
+    string location_address = 5;
+    int32 area_id = 6;
+    string area_name = 7;
+    Status status = 8;
+    Availability availability = 9;
+    string type_of_device = 10;
+    string mac_address = 11;
+    string os = 12;
+    string app_version = 13;
+    string ip_address = 14;
+}
+
+message Video {
+    string video_id = 1;
+    bytes content = 2;
+    string file_name = 3;
+    string format = 4;
+    string url = 5;
+    int64 updated_at = 6;
+    string title = 7;
+    string tag = 8;
+    string picture = 9;
+    Status status = 10;
+}
+
+message Videos {
+    repeated Video data = 1; // TODO: add paging variables.
+}
+
+message AdSetBasic {
+    int32 total_video = 1;
+    int32 played = 2;
+    repeated string videos = 3; // profile picture of each videos
+}
+
+message AdSet {
+    message Video {
+        int32 id = 1;
+        string file_name = 2;
+        string picture = 3;
+    }
+    int32 total_video = 1;
+    int32 played = 2;
+    repeated Video data = 3;
+}
+
+message Campaign {
+    int32 id = 1;
+    string name = 2;
+    int64 from_date = 3;
+    int64 to_date = 4;
+    CampaignStatus status = 5;
+    AdSetBasic ad_set = 6;
+    int32 total_location = 8;
+    int32 total_screen = 7;
+}
+
+message CampaignRule {
+    repeated int32 locations = 2;
+    repeated int32 areas = 3;
+    CampaignTimeRule time_rule = 4;
+}
+
+message CampaignDetail {
+    int32 id = 1;
+    string name = 2;
+    AdSet ad_set = 3;
+    int64 from_date = 4;
+    int64 to_date = 5;
+    CampaignRule campaign_rule = 6;
+    repeated int32 selected_screens = 7;
+    CampaignStatus status = 8;
+}
